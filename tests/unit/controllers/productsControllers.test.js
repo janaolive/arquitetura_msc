@@ -7,7 +7,7 @@ const productsControllers = require('../../../controllers/productsControllers');
 const { mockProducts, productIdResult } = require('../mocks/productsMock');
 
 describe('Tabela Products ==> Camada Controller', () => {
-  describe('productsController', () => {
+  describe('productsControllers', () => {
     describe('#getAllProducts', () => {
       describe('Quando a tabela possuir dados', () => {
         const req = {};
@@ -30,7 +30,7 @@ describe('Tabela Products ==> Camada Controller', () => {
           await before();
 
           expect(res.status.calledWith(200)).to.be.true;
-          expect(res.json.calledWith(mockProducts.productMock)).to.be.true;
+          expect(res.json.calledWith(mockProducts)).to.be.true;
 
           after();
         });
