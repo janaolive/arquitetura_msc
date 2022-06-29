@@ -14,4 +14,13 @@ const mockProducts = [{
 	quantity: 30,
   }];
 
-module.exports = mockProducts;
+const productIdResult = { 
+  id: 2,
+  name:'Traje de encolhimento',
+  quantity: 20,
+};
+
+module.exports = {
+  mockProducts,
+  productIdResult,
+};

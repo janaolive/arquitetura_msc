@@ -2,17 +2,17 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 
 const productsModels = require('../../../models/productsModels');
-const mockProducts = require('../mocks/productsMock');
+const { mockProducts } = require('../mocks/productsMock');
 
 describe('Tabela Products ==> Camada Model', () => {
-  describe('productsModel', () => {
+  describe('productsModels', () => {
     describe('#getAllProducts', () => {
       describe('Quando a tabela possuir dados', () => {
         it('retornar dados', async () => {
 
           sinon.stub(connection, 'execute').resolves([mockProducts]);
 
-          const products = await productsModel.getAllProducts();
+          const products = await productsModels.getAllProducts();
           expect(products).to.be.equal(products);
           
           connection.execute.restore();
@@ -27,7 +27,7 @@ describe('Tabela Products ==> Camada Model', () => {
 
           sinon.stub(connection, 'execute').resolves([mockProducts[idSelected]]);
 
-          const products = await productsModel.getProductById(idSelected);
+          const products = await productsModels.getProductById(idSelected);
           expect(products).to.be.eq(mockProducts[idSelected]);
           
           connection.execute.restore();

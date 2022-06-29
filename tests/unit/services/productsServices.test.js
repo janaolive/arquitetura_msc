@@ -4,20 +4,20 @@ const sinon = require('sinon');
 const productsModels = require('../../../models/productsModels');
 const productsServices = require('../../../services/productsServices');
 
-const mockProducts = require('../mocks/productsMock');
+const { mockProducts } = require('../mocks/productsMock');
 
 describe('Tabela Products ==> Camada Service', () => {
-  describe('productsService', () => {
+  describe('productsServices', () => {
     describe('#getAllProducts', () => {
       describe('Quando a tabela possuir dados', () => {
         it('retornar dados', async () => {
 
-          sinon.stub(productsModel, 'getAllProducts').resolves([mockProducts]);
+          sinon.stub(productsModels, 'getAllProducts').resolves([mockProducts]);
 
-          const products = await productsService.getAllProducts();
+          const products = await productsServices.getAllProducts();
           expect(products).to.be.eq(products);
           
-          productsModel.getAllProducts.restore();
+          productsModels.getAllProducts.restore();
         })
       })
     })
@@ -27,12 +27,12 @@ describe('Tabela Products ==> Camada Service', () => {
         it('retornar informações do id', async () => {
           const idSelected = 2;
 
-          sinon.stub(productsModel, 'getProductById').resolves([mockProducts[idSelected]]);
+          sinon.stub(productsModels, 'getProductById').resolves([mockProducts[idSelected]]);
 
-          const products = await productsService.getProductById(idSelected);
+          const products = await productsServices.getProductById(idSelected);
           expect(products).to.be.eq(mockProducts[idSelected]);
           
-          productsModel.getProductById.restore();
+          productsModels.getProductById.restore();
         })
       })
     });

@@ -4,7 +4,7 @@ const sinon = require('sinon');
 const productsServices = require('../../../services/productsServices');
 const productsControllers = require('../../../controllers/productsControllers');
 
-const mockProducts = require('../mocks/productsMock');
+const { mockProducts, productIdResult } = require('../mocks/productsMock');
 
 describe('Tabela Products ==> Camada Controller', () => {
   describe('productsController', () => {
@@ -17,13 +17,13 @@ describe('Tabela Products ==> Camada Controller', () => {
           res.status = sinon.stub().returns(res);
           res.json = sinon.stub();
             
-          sinon.stub(productsService, 'getAllProducts').resolves(mockProducts.productMock);
+          sinon.stub(productsServices, 'getAllProducts').resolves(mockProducts);
 
-          await productsController.getAllProducts(req, res);
+          await productsControllers.getAllProducts(req, res);
         }
 
         const after = () => {
-          productsService.getAllProducts.restore();
+          productsServices.getAllProducts.restore();
         }
 
         it('deve chamar res.status = 200 e res.json com seus elementos', async () => {
@@ -47,13 +47,13 @@ describe('Tabela Products ==> Camada Controller', () => {
           res.status = sinon.stub().returns(res);
           res.json = sinon.stub();
             
-          sinon.stub(productsService, 'getProductById').resolves(mockProducts.productIdResult);
+          sinon.stub(productsServices, 'getProductById').resolves(productIdResult);
 
-          await productsController.getProductById(req, res);
+          await productsControllers.getProductById(req, res);
           expect(res.status.calledWith(200)).to.be.true;
-          expect(res.json.calledWith(mockProducts.productIdResult)).to.be.true;
+          expect(res.json.calledWith(productIdResult)).to.be.true;
             
-          productsService.getProductById.restore();
+          productsServices.getProductById.restore();
 
         })
       })
@@ -64,13 +64,13 @@ describe('Tabela Products ==> Camada Controller', () => {
           res.status = sinon.stub().returns(res);
           res.json = sinon.stub();
             
-          sinon.stub(productsService, 'getProductById').resolves(undefined);
+          sinon.stub(productsServices, 'getProductById').resolves(undefined);
 
-          await productsController.getProductById(req, res);
+          await productsControllers.getProductById(req, res);
           expect(res.status.calledWith(404)).to.be.true;
           expect(res.json.calledWith({ message: 'Product not found' })).to.be.true;
            
-          productsService.getProductById.restore();
+          productsServices.getProductById.restore();
     
         })
       })
