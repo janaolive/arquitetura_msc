@@ -40,4 +40,7 @@ const alteredProduct = {
 module.exports = {
   mockProducts,
   productIdResult,
+  resultNewProduct,
+  insertNewProduct,
+  alteredProduct,
 };
