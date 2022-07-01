@@ -6,10 +6,10 @@ const productsServices = require('../../../services/productsServices');
 
 const {
   mockProducts,
-  // productIdResult,
-  // resultNewProduct,
-  // insertNewProduct,
-  // alteredProduct,
+  productIdResult,
+  resultNewProduct,
+  insertNewProduct,
+  alteredProduct,
 }  = require('../mocks/productsMock');
 
 describe('Tabela Products ==> Camada Service', () => {

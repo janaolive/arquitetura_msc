@@ -39,8 +39,8 @@ const insertNewProduct = {
 
 module.exports = {
   mockProducts,
-  // productIdResult,
-  // resultNewProduct,
-  // insertNewProduct,
-  // alteredProduct,
+  productIdResult,
+  resultNewProduct,
+  insertNewProduct,
+  alteredProduct,
 };

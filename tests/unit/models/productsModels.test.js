@@ -6,10 +6,10 @@ const connection = require('../../../models/connection');
 
 const {
   mockProducts,
-  // productIdResult,
-  // resultNewProduct,
-  // insertNewProduct,
-  // alteredProduct,
+  productIdResult,
+  resultNewProduct,
+  insertNewProduct,
+  alteredProduct,
 }  = require('../mocks/productsMock');
 
 describe('Tabela Products ==> Camada Model', () => {
