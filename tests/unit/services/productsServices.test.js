@@ -36,5 +36,20 @@ describe('Tabela Products ==> Camada Service', () => {
         })
       })
     });
+
+    describe('#deleteProduct', () => {
+      describe('Quando excluir um produto', () => {
+        it('não retorna informação', async () => {
+          const idDeleted = 1;
+
+          sinon.stub(productsModels, 'deleteProduct').resolves();
+
+          const products = await productsService.deleteProduct(idDeleted);
+          expect(products).to.deep.eq(undefined);
+          
+          productsModels.deleteProduct.restore();
+        })
+      })
+    });
   });
 });

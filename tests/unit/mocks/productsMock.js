@@ -20,6 +20,23 @@ const productIdResult = {
   quantity: 20,
 };
 
+const resultNewProduct = {
+  id: 1,
+  name: 'Martelo de Thor',
+  quantity: 10,
+};
+
+const insertNewProduct = {
+  name: 'Capa da Mulher Maravilha',
+  quantity: 10,
+};
+
+const alteredProduct = {
+  id: 1,
+  name: 'Capa da Mulher Maravilha',
+  quantity: 10,
+};
+
 module.exports = {
   mockProducts,
   productIdResult,
