@@ -31,16 +31,16 @@ const insertNewProduct = {
   quantity: 10,
 };
 
-const alteredProduct = {
-  id: 1,
-  name: 'Capa da Mulher Maravilha',
-  quantity: 10,
-};
+// const alteredProduct = {
+//   id: 1,
+//   name: 'Capa da Mulher Maravilha',
+//   quantity: 10,
+// };
 
 module.exports = {
   mockProducts,
-  productIdResult,
-  resultNewProduct,
-  insertNewProduct,
-  alteredProduct,
+  // productIdResult,
+  // resultNewProduct,
+  // insertNewProduct,
+  // alteredProduct,
 };

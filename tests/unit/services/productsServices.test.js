@@ -43,19 +43,19 @@ describe('Tabela Products ==> Camada Service', () => {
       })
     });
 
-    describe('#deleteProduct', () => {
-      describe('Quando excluir um produto', () => {
-        it('não retorna informação', async () => {
-          const idDeleted = 1;
+//     describe('#deleteProduct', () => {
+//       describe('Quando excluir um produto', () => {
+//         it('não retorna informação', async () => {
+//           const idDeleted = 1;
 
-          sinon.stub(productsModels, 'deleteProduct').resolves();
+//           sinon.stub(productsModels, 'deleteProduct').resolves();
 
-          const products = await productsServices.deleteProduct(idDeleted);
-          expect(products).to.deep.eq(undefined);
+//           const products = await productsServices.deleteProduct(idDeleted);
+//           expect(products).to.deep.eq(undefined);
           
-          productsModels.deleteProduct.restore();
-        })
-      })
-    });
-  });
-});
+//           productsModels.deleteProduct.restore();
+//         })
+//       })
+//     });
+//   });
+// });
