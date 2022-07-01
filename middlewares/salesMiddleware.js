@@ -24,10 +24,10 @@ const validateSalesQuantity = async (req, res, next) => {
       return res.status(400).json({ message: '"quantity" is required' });
     }
 
-      next();
-  };
+  next();
+};
   
-  const validateProductId = (req, res, next) => {
+const validateProductId = (req, res, next) => {
   const { productId } = req.body;
   
   if (!productId) {
