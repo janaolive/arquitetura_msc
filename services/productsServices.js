@@ -10,7 +10,7 @@ const getProductById = async (id) => {
   return product[0];
 };
 
- const registerProduct = async ({ name }) => {
+const registerProduct = async ({ name }) => {
   const productsList = await productsModels.getAllProducts();
     const findProduct = productsList.find((product) => product.name === name);
       if (findProduct) {
@@ -20,8 +20,15 @@ const getProductById = async (id) => {
     const newProduct = await productsModels.registerProduct({ name });
       return newProduct;
 };
+
+const editProduct = async (id, { name }) => {
+  const productToUpdate = await productsModels.editProduct(id, { name });
+    return productToUpdate;
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   registerProduct,
+  editProduct,
 };

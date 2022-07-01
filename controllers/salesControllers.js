@@ -17,12 +17,14 @@ const getSaleById = async (req, res) => {
 };
 
 const registerSale = async (req, res) => {
-  const sales = req.body;
- 
-  const newSale = await salesServices.registerSale(sales);
-   return res.status(201).json(newSale);  
+  try {
+    const { productId, quantity } = req.body;
+    const newSale = await salesServices.registerSale({ productId, quantity });
+     res.status(201).json(newSale);  
+  } catch (error) {
+    res.status(409).json({ message: 'Product not found' });
+  }
 };
-
 module.exports = {
   getAllSales,
   getSaleById,

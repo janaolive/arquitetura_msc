@@ -8,7 +8,17 @@ const validateSalesId = async (req, res, next) => {
     }
     
     next();
-  };
+};
+  
+  // const validateProductId = (req, res, next) => {
+  //   const { productId } = req.body;
+    
+  //   if (!productId) {
+  //     return res.status(404).json({ message: 'Product not found' });
+  //   }
+  
+  // next();
+  // };
   
 const validateSalesQuantity = async (req, res, next) => {
   const sales = req.body;
@@ -26,19 +36,9 @@ const validateSalesQuantity = async (req, res, next) => {
 
   next();
 };
-  
-const validateProductId = (req, res, next) => {
-  const { productId } = req.body;
-  
-  if (!productId) {
-    return res.status(404).json({ message: 'Product not found' });
-  }
-
-next();
-};
 
   module.exports = {
     validateSalesId,
     validateSalesQuantity,
-    validateProductId,
+    // validateProductId,
   };

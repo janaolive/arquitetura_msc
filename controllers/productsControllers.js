@@ -26,8 +26,19 @@ const registerProduct = async (req, res) => {
   }
 };
 
+const editProduct = async (req, res) => {
+  const { id } = req.params;
+  const { name } = req.body;
+  
+  const productToUpdate = await productsServices.editProduct(id, { name });
+  const findProduct = await productsServices.getProductById(id);
+    if (!findProduct) return res.status(404).json({ message: 'Product not found' });
+      return res.status(200).json(productToUpdate);
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   registerProduct,
+  editProduct,
 };
