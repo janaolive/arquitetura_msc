@@ -5,9 +5,9 @@ const connection = require('../../../models/connection');
 const productsModels = require('../../../models/productsModels');
 const {
   mockProducts,
-  resultNewProduct,
-  insertNewProduct,
-  alteredProduct,
+  // resultNewProduct,
+  // insertNewProduct,
+  // alteredProduct,
 } = require('../mocks/productsMock');
 
 describe('Tabela Products ==> Camada Models', () => {

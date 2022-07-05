@@ -16,14 +16,15 @@ const productIdResult = {
   name:'Traje de encolhimento',
 };
 
+const insertNewProduct = {
+  name: 'Capa da Mulher Maravilha',
+};
+
 const resultNewProduct = {
   id: 1,
   name: 'Martelo de Thor',
 };
 
-const insertNewProduct = {
-  name: 'Capa da Mulher Maravilha',
-};
 
 const alteredProduct = {
   id: 1,

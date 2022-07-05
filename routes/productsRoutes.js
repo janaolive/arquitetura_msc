@@ -3,15 +3,15 @@ const express = require('express');
 const productsControllers = require('../controllers/productsControllers');
 const validateProductName = require('../middlewares/validateProductName');
 
-const router = express.Router();
+const routerProducts = express.Router();
 
-router.get('/:id', productsControllers.getProductById);
-router.get('/', productsControllers.getAllProducts);
+routerProducts.get('/:id', productsControllers.getProductById);
+routerProducts.get('/', productsControllers.getAllProducts);
 
-router.post('/', validateProductName, productsControllers.registerProduct);
+routerProducts.post('/', validateProductName, productsControllers.registerProduct);
 
-router.put('/:id', validateProductName, productsControllers.editProduct);
+routerProducts.put('/:id', validateProductName, productsControllers.editProduct);
 
-router.delete('/:id', productsControllers.deleteProduct);
+routerProducts.delete('/:id', productsControllers.deleteProduct);
 
-module.exports = router;
+module.exports = routerProducts;
