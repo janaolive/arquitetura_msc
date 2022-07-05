@@ -4,7 +4,7 @@ const sinon = require('sinon');
 const productsModels = require('../../../models/productsModels');
 const productsServices = require('../../../services/productsServices');
 
-const { mockProducts }  = require('../mocks/productsMock');
+const { mockProducts, productIdResult } = require('../mocks/productsMock');
 
 describe('Tabela Products ==> Camada Services', () => {
   describe('productsServices', () => {
@@ -16,7 +16,7 @@ describe('Tabela Products ==> Camada Services', () => {
 
           const products = await productsServices.getAllProducts();
           expect(products).to.be.eq(products);
-          
+
           productsModels.getAllProducts.restore();
         })
       })
@@ -31,25 +31,10 @@ describe('Tabela Products ==> Camada Services', () => {
 
           const products = await productsServices.getProductById(idSelected);
           expect(products).to.be.eq(mockProducts[idSelected]);
-          
+
           productsModels.getProductById.restore();
         })
       })
     });
-
-    describe('#deleteProduct', () => {
-      describe('Quando excluir um produto', () => {
-        it('não retorna informação', async () => {
-          const idDeleted = 1;
-
-          sinon.stub(productsModels, 'deleteProduct').resolves();
-
-          const products = await productsServices.deleteProduct(idDeleted);
-          expect(products).to.deep.eq(undefined);
-          
-          productsModels.deleteProduct.restore();
-        })
-      })
-    });
   });
-});
+}); 
