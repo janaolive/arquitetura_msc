@@ -30,7 +30,58 @@ const saleId = [
   },
 ];
 
+const saleResult = {
+  id: 1,
+  itemSold: [{
+    productId: 1,
+    quantity: 3,
+  }]
+};
+
+const registerSale = [{
+  productId: 1,
+  quantity: 3,
+}]
+
+const alteredSale = [
+  {
+    saleId: 1,
+    itemUpdated: [{
+      productId: 1,
+      quantity: 6,
+    }]
+  },
+  {
+    saleId: 2,
+    itemUpdated: [{
+      productId: 2,
+      quantity: 6,
+    }]
+  },
+];
+
+const editSale = [
+  {
+    saleId: 1,
+    products: [{
+      productId: 1,
+      quantity: 6,
+    }]
+  },
+  {
+    saleId: 2,
+    products: [{
+      productId: 2,
+      quantity: 6,
+    }]
+  },
+];
+
 module.exports = {
   mockSales,
   saleId,
+   saleResult,
+  registerSale,
+  alteredSale,
+  editSale,
 };
