@@ -22,7 +22,28 @@ const getSaleById = async (id) => {
   return sale;
 };
 
+// const registerSale = async (sales) => {
+//   const [{ insertId }] = await connection.execute(
+//     'INSERT INTO StoreManager.sales (date) VALUES (NOW())',
+//   );
+  
+//   const newSale = sales.map(({ productId, quantity }) => 
+//     connection.execute(
+//       `INSERT INTO StoreManager.sales_products (sale_id, product_id, quantity)
+//         VALUES (?, ?, ?)`,
+//         [insertId, productId, quantity],
+//   ));
+  
+//   await Promise.all(newSale);
+
+//     return {
+//       id: insertId,
+//       itemSold: { sales },
+//     };
+// };
+
 module.exports = {
   getAllSales,
   getSaleById,
+  // registerSale,
 };

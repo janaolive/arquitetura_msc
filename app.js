@@ -2,10 +2,12 @@ const express = require('express');
 
 const app = express();
 
+const bodyParser = require('body-parser');
+
 const routerProducts = require('./routes/productsRoutes');
 const routerSales = require('./routes/salesRoutes');
 
-app.use(express.json());
+app.use(bodyParser.json());
 
 app.use('/products', routerProducts);
 app.use('/sales', routerSales);
