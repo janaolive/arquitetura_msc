@@ -11,7 +11,7 @@ routerSales.get('/', salesControllers.getAllSales);
 
 // routerSales.post('/', validateProductId, validateQuantity, salesControllers.registerSale);
 
-// routerSales.put('/:id', validateProductId, validateQuantity, salesControllers.editSale);
+// routerSales.put('/:id', salesControllers.editSale);
 
 // routerSales.delete('/:id', salesControllers.deleteSale);
 

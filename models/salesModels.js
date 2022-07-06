@@ -42,8 +42,31 @@ const getSaleById = async (id) => {
 //     };
 // };
 
+// const editSale = async (id, sales) => {
+//   const saleEdit = sales.map(({ productId, quantity }) => 
+//     connection.execute(
+//       `UPDATE StoreManager.sales_products SET quantity=? 
+//         WHERE sale_id=? AND product_id=?`,
+//         [quantity, id, productId],
+//   ));
+  
+//   await Promise.all(saleEdit);
+
+//     return {
+//       saleId: id,
+//       itemUpdate: sales,
+//     };
+// };
+
+// const deleteSale = async (id) => {
+//   const query = 'DELETE FROM StoreManager.sales WHERE id=?';
+//   await connection.execute(query, [id]);
+// };
+
 module.exports = {
   getAllSales,
   getSaleById,
   // registerSale,
+  // editSale,
+//   deleteSale,
 };

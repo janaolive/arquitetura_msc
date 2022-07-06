@@ -26,8 +26,28 @@ const getSaleById = async (req, res) => {
 //   }
 // };
 
+// const editSale = async (req, res) => {
+//   const { id } = req.params;
+//   const sales = req.body;
+  
+//   const saleEdit = await salesServices.editSale(id, sales);
+//     return res.status(200).json(saleEdit);
+// };
+
+// const deleteSale = async (req, res) => {
+//   const { id } = req.params;
+  
+//   const findSale = await salesServices.getSaleById(id);
+//     if (!findSale) return res.status(404).json({ message: 'Sale not found' });
+  
+//   await salesServices.deleteSale(id);
+//     return res.status(204).end();
+// };
+
 module.exports = {
   getAllSales,
   getSaleById,
   // registerSale,
+  // editSale,
+  // deleteSale,
 };
